@@ -1,0 +1,19 @@
+name: Upload Website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+    sleslie23:
+        runs-on: macos
+        steps:
+          - name: Configure AWS Credentials
+            uses: aws-action/configure-aws-credentials@v1
+            with:
+              aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+              aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+              aws-region: us-west-1
+          - name: Deploy site to s3 bucket
+            run: aws s3 sync . s3://sleslie23 --delete
