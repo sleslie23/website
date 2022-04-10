@@ -7,7 +7,7 @@ on:
 
 jobs:
     upload:
-        runs-on: macos
+        runs-on: ubuntu-latest
         # timeout-minutes: 10
         steps:
           - name: Set AWS Credentials
