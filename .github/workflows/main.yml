@@ -8,7 +8,7 @@ on:
 jobs:
     upload:
         runs-on: ubuntu-latest
-        timeout-minutes: 10
+        # timeout-minutes: 10
         steps:
           - name: Set AWS Credentials
             uses: aws-action/configure-aws-credentials@v1
