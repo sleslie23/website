@@ -10,8 +10,8 @@ jobs:
         runs-on: ubuntu-latest
         timeout-minutes: 10
         steps:
-          - uses: aws-action/configure-aws-credentials@v1
           - name: Set AWS Credentials
+            uses: aws-action/configure-aws-credentials@v1
             with:
               aws_access_key_id: ${{secrets.AWS_ACCESS_KEY_ID}}
               aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
