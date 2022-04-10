@@ -8,5 +8,8 @@ Long-term this will have more content and functionality.
 
 ## Todo
 
+- AWS
+  - Configure CloudFront to access bucket
+  - Configure CloudFront to handle traffic to www.sleslie23.com
 - Add more content / formatting
 - Use React
