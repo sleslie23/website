@@ -8,14 +8,14 @@ on:
 jobs:
     upload:
         runs-on: ubuntu-latest
+        timeout-minutes: 10
         steps:
-          - name: Copy files to S3
           - uses: aws-action/configure-aws-credentials@v1
-            shell: bash
-            env:
+          - name: Set AWS Credentials
+            with:
               aws_access_key_id: ${{secrets.AWS_ACCESS_KEY_ID}}
               aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
               aws_s3_bucket: ${{ secrets.AWS_S3BUCKET_NAME }}
               aws_region: ${{ secrets.AWS_REGION }}
-            run: 
-              aws s3 sync . s3://sleslie23 --delete
+          - name: Deploy to S3
+            run: aws s3 sync . s3://sleslie23 --delete
